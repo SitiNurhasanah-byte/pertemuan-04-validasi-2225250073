@@ -10,9 +10,13 @@ Membangun program validasi dan klasifikasi dengan rantai if-elif-else.
 
 ### Latihan
 python3 latihan/01_predikat_nilai.py
+
 python3 latihan/02_kategori_bilangan.py
+
 python3 latihan/03_jenis_sudut.py
+
 python3 latihan/04_tuntas_soal.py
+
 python3 latihan/05_jenis_segitiga_sudut.py
 
 ### Praktik
