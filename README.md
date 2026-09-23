@@ -33,18 +33,19 @@ python3 praktik/validasi_klasifikasi_nilai.py
 | 50 ≤ Nilai akhir < 60            | -                                 | D                 |
 | Nilai akhir < 50                 | -                                 | E                 |
 
-## Hasil Pengujian
+## Hasil Pengujian Wajib
 
-| Masukan (ujian, tugas, hadir) | Keluaran yang Diharapkan                  | Keluaran Aktual                  | Status |
-|-------------------------------|-------------------------------------------|----------------------------------|--------|
-| 90, 80, 85                    | Nilai akhir = 86.00, Predikat A, Lulus    | Nilai akhir = 86.00, Predikat A, Lulus | ✅ |
-| 75, 70, 90                    | Nilai akhir = 73.00, Predikat B, Lulus    | Nilai akhir = 73.00, Predikat B, Lulus | ✅ |
-| 65, 60, 90                    | Nilai akhir = 63.00, Predikat C, Lulus    | Nilai akhir = 63.00, Predikat C, Lulus | ✅ |
-| 55, 50, 90                    | Nilai akhir = 53.00, Predikat D, Belum lulus | Nilai akhir = 53.00, Predikat D, Belum lulus | ✅ |
-| 40, 45, 90                    | Nilai akhir = 42.00, Predikat E, Belum lulus | Nilai akhir = 42.00, Predikat E, Belum lulus | ✅ |
-| 80, 70, 70                    | Tidak memenuhi syarat kehadiran           | Tidak memenuhi syarat kehadiran  | ✅ |
-| "abc", 70, 90                 | Masukan ditolak: tipe                     | Masukan ditolak: tipe            | ✅ |
-| 120, 70, 90                   | Masukan ditolak: ujian di luar rentang    | Masukan ditolak: ujian di luar rentang | ✅ |
+| Masukan (Ujian, Tugas, Kehadiran) | Nilai Akhir | Keluaran yang Diharapkan                                | Keluaran Aktual                                    | Status |
+|-----------------------------------|-------------|---------------------------------------------------------|---------------------------------------------------|--------|
+| 90, 80, 95                        | 86.00       | Predikat A, Lulus                                       | Predikat A, Lulus                                 | ✅ |
+| 75, 70, 85                        | 73.00       | Predikat B, Lulus                                       | Predikat B, Lulus                                 | ✅ |
+| 60, 60, 80                        | 60.00       | Predikat C, Lulus                                       | Predikat C, Lulus                                 | ✅ |
+| 55, 50, 90                        | 53.00       | Predikat D, Belum lulus                                 | Predikat D, Belum lulus                           | ✅ |
+| 40, 30, 100                       | 36.00       | Predikat E, Belum lulus                                 | Predikat E, Belum lulus                           | ✅ |
+| 90, 90, 75                        | 90.00       | Nilai akhir tampil, status Tidak memenuhi syarat hadir  | Tidak memenuhi syarat kehadiran                   | ✅ |
+| 105, 80, 90                       | -           | Pesan penolakan rentang nilai ujian                     | Masukan ditolak: nilai ujian di luar rentang 0–100 | ✅ |
+| 80, -5, 90                        | -           | Pesan penolakan rentang nilai tugas                     | Masukan ditolak: nilai tugas di luar rentang 0–100 | ✅ |
+| 80, 80, abc                       | -           | Pesan penolakan tipe                                    | Masukan ditolak: seluruh data harus berupa angka   | ✅ |
 
 ## Refleksi
 Awalnya masukan kehadiran di luar rentang (misalnya 150) terlewat.
