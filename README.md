@@ -19,26 +19,32 @@ python3 latihan/05_jenis_segitiga_sudut.py
 python3 praktik/validasi_klasifikasi_nilai.py
 
 ## Tabel Keputusan
-- Penolakan tipe: input bukan angka
-- Penolakan rentang ujian: ujian < 0 atau > 100
-- Penolakan rentang tugas: tugas < 0 atau > 100
-- Penolakan rentang kehadiran: hadir < 0 atau > 100
-- Tidak memenuhi syarat kehadiran: hadir < 80
-- Predikat A: nilai akhir ≥ 85
-- Predikat B: 70 ≤ nilai akhir < 85
-- Predikat C: 60 ≤ nilai akhir < 70
-- Predikat D: 50 ≤ nilai akhir < 60
-- Predikat E: nilai akhir < 50
+
+| Kondisi                          | Syarat                            | Output / Predikat |
+|----------------------------------|-----------------------------------|-------------------|
+| Input bukan angka                | tipe data tidak valid             | Ditolak           |
+| Nilai ujian di luar rentang      | ujian < 0 atau ujian > 100        | Ditolak           |
+| Nilai tugas di luar rentang      | tugas < 0 atau tugas > 100        | Ditolak           |
+| Kehadiran di luar rentang        | hadir < 0 atau hadir > 100        | Ditolak           |
+| Kehadiran tidak memenuhi syarat  | hadir < 80                        | Tidak lulus       |
+| Nilai akhir ≥ 85                 | -                                 | A                 |
+| 70 ≤ Nilai akhir < 85            | -                                 | B                 |
+| 60 ≤ Nilai akhir < 70            | -                                 | C                 |
+| 50 ≤ Nilai akhir < 60            | -                                 | D                 |
+| Nilai akhir < 50                 | -                                 | E                 |
 
 ## Hasil Pengujian
-- Input: 90, 80, 85 → Nilai akhir = 86.00, Predikat A, Lulus
-- Input: 75, 70, 90 → Nilai akhir = 73.00, Predikat B, Lulus
-- Input: 65, 60, 90 → Nilai akhir = 63.00, Predikat C, Lulus
-- Input: 55, 50, 90 → Nilai akhir = 53.00, Predikat D, Belum lulus
-- Input: 40, 45, 90 → Nilai akhir = 42.00, Predikat E, Belum lulus
-- Input: 80, 70, 70 → Tidak memenuhi syarat kehadiran
-- Input: "abc", 70, 90 → Masukan ditolak: tipe
-- Input: 120, 70, 90 → Masukan ditolak: ujian di luar rentang
+
+| Masukan (ujian, tugas, hadir) | Keluaran yang Diharapkan                  | Keluaran Aktual                  | Status |
+|-------------------------------|-------------------------------------------|----------------------------------|--------|
+| 90, 80, 85                    | Nilai akhir = 86.00, Predikat A, Lulus    | Nilai akhir = 86.00, Predikat A, Lulus | ✅ |
+| 75, 70, 90                    | Nilai akhir = 73.00, Predikat B, Lulus    | Nilai akhir = 73.00, Predikat B, Lulus | ✅ |
+| 65, 60, 90                    | Nilai akhir = 63.00, Predikat C, Lulus    | Nilai akhir = 63.00, Predikat C, Lulus | ✅ |
+| 55, 50, 90                    | Nilai akhir = 53.00, Predikat D, Belum lulus | Nilai akhir = 53.00, Predikat D, Belum lulus | ✅ |
+| 40, 45, 90                    | Nilai akhir = 42.00, Predikat E, Belum lulus | Nilai akhir = 42.00, Predikat E, Belum lulus | ✅ |
+| 80, 70, 70                    | Tidak memenuhi syarat kehadiran           | Tidak memenuhi syarat kehadiran  | ✅ |
+| "abc", 70, 90                 | Masukan ditolak: tipe                     | Masukan ditolak: tipe            | ✅ |
+| 120, 70, 90                   | Masukan ditolak: ujian di luar rentang    | Masukan ditolak: ujian di luar rentang | ✅ |
 
 ## Refleksi
 Awalnya masukan kehadiran di luar rentang (misalnya 150) terlewat.
